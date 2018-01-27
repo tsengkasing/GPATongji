@@ -1,0 +1,34 @@
+{
+  "name": "gpatongji",
+  "version": "1.0.0",
+  "description": "A Node.js service to request and parse GPA of undergraduate from xuanke.tongji.edu.cn.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsengkasing/GPATongji.git"
+  },
+  "author": "tsengkasing",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/tsengkasing/GPATongji/issues"
+  },
+  "homepage": "https://github.com/tsengkasing/GPATongji#readme",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "dependencies": {
+    "html-minifier": "^3.5.8",
+    "iconv-lite": "^0.4.19",
+    "jsdom": "^11.6.1",
+    "md5": "^2.2.1",
+    "raven": "^2.4.0"
+  }
+}
