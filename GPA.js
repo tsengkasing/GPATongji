@@ -4,7 +4,7 @@
  * Getting GPA of Undergraduate from xuanke.tongji.edu.cn
  *
  * Due to the reason that the charset of the website is gbk2312,
- * so we need to convert it to utf8 using icon-list.
+ * so we need to convert it to utf8 using iconv-lite.
  *
  * What's more, we use jsdom to parse the html.
  *

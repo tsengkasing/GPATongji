@@ -8,8 +8,7 @@ const GPA = require('./GPA');
 const {PORT} = require('./config.json');
 
 http.createServer(function (request, response) {
-	const {url, method} = request;
-	const { headers } = request;
+	const {url, method, headers} = request;
 	const remoteIp = headers['x-real-ip'];
 
 	switch (url) {
@@ -27,7 +26,7 @@ http.createServer(function (request, response) {
 					response.end('Unsupport Media Format', 'utf8');
 				}
 				const {token1, token2} = info;
-				console.log(`[${new Date().toLocaleString()}][${remoteIp}]      \t\t ${token1}`);
+				console.log(`[${new Date().toLocaleString()}][${remoteIp}]        \t\t ${token1}`);
 				if (!token1 || !token2) {
 					response.end('学号或密码不能为空！', 'utf8');
 				} else {
