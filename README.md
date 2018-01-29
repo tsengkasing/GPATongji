@@ -12,7 +12,18 @@ $ npm install -g pm2
 $ pm2 start server.js --name GPATongji
 ```
 
-> default listening port: 3456
+> default listening port: 3456    
+> URL : /api/gpa    
+> headers: "Content-Type:application/json;charset=utf8"    
+> method: POST    
+> body: {"token1": "", "token2": ""}    
+
+
+Sample: ↓
+
+```shell
+curl -X POST -H "Content-Type:application/json;charset=utf8" --data '{"token1":"147", "token2":"147"}' http://localhost:3456/api/gpa
+```
 
 ## Format
 
