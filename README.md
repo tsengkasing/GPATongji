@@ -58,3 +58,9 @@ curl -X POST -H "Content-Type:application/json;charset=utf8" --data '{"token1":"
     ]
 }
 ```
+
+## Update
+
+### 2018-03-04
+
+学校切换到统一身份验证系统，抓取绩点的方式改为``GPA-OIOSAML.js``

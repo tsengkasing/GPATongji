@@ -4,8 +4,11 @@
  */
 
 const http = require('http');
-const GPA = require('./GPA');
-const {PORT} = require('./config.json');
+const GPA = require('./GPA-OIOSAML');
+const Raven = require('raven');
+const {PORT, RAVEN_DSN} = require('./config.json');
+
+Raven.config(RAVEN_DSN).install();
 
 http.createServer(function (request, response) {
 	const {url, method, headers} = request;
@@ -38,6 +41,8 @@ http.createServer(function (request, response) {
 						GPA(token1, token2).then(({status, data}) => {
 							if (status) {
 								response.setHeader('Content-Type', 'application/json;charset=UTF-8');
+							} else {
+								Raven.captureException(data, {tags: {user: `${token1}`}});
 							}
 							response.end(data, 'utf8');
 						});
