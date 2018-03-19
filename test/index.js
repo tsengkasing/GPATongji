@@ -7,7 +7,7 @@ const { performance } = require('perf_hooks');
 
 (async function () {
 	const testToken = {token1: 'xxx', token2: 'xxx'};
-	const testGPAMethod = require('./GPA-OIOSAML');
+	const testGPAMethod = require('../lib/GPA-unified');
 
 	const testCases = [
 		{func: testTime, name: '比较旧式登录和统一身份验证的时间'},
@@ -18,18 +18,18 @@ const { performance } = require('perf_hooks');
 	let testResult = await Promise.all(testCases.map(async ({func, name}) => ({name, result: await func(testGPAMethod, testToken)})));
 	testResult = testResult.map(({name, result}) => `Case ${name} => ${result ? 'passed √' : 'failed X'}`).join('\n');
 
-	console.log(testResult);
+	console.info(testResult);
 })();
 
 async function testTime (GPA, {token1, token2}) {
 	performance.mark('Old start');
-	const { status: status1 } = await require('./GPA')(token1, token2);
+	const { status: status1 } = await require('../lib/GPA')(token1, token2);
 	performance.mark('Old end');
 
 	if (!status1) return false;
 
 	performance.mark('oiosaml start');
-	const { status: status2 } = await require('./GPA-OIOSAML')(token1, token2);
+	const { status: status2 } = await require('../lib/GPA-unified')(token1, token2);
 	performance.mark('oiosaml end');
 
 	if (!status2) return false;
@@ -40,9 +40,9 @@ async function testTime (GPA, {token1, token2}) {
 	const {duration: oldTime} = performance.getEntriesByName('old')[0];
 	const {duration: oiosamlTime} = performance.getEntriesByName('oiosaml')[0];
 
-	console.log('==========================================');
-	console.log(`Old: ${oldTime}\noiosaml: ${oiosamlTime}`);
-	console.log('==========================================');
+	console.info('==========================================');
+	console.info(`Old: ${oldTime}\noiosaml: ${oiosamlTime}`);
+	console.info('==========================================');
 
 	return true;
 }
@@ -58,6 +58,6 @@ async function testSuccess (GPA, {token1, token2}) {
 
 async function testFailed (GPA, {token1, token2}) {
 	const { status, data } = await GPA(token1, 'xxx');
-	console.log(`${status} - ${data}`);
+	console.info(`[info] ${status} - ${data}`);
 	return status === false && data === '你输错学号密码啦!';
 }

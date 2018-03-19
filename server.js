@@ -4,7 +4,7 @@
  */
 
 const http = require('http');
-const GPA = require('./GPA-OIOSAML');
+const GPA = require('./lib/GPA-unified');
 const Raven = require('raven');
 const {PORT, RAVEN_DSN} = require('./config.json');
 

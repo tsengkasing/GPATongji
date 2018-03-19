@@ -25,11 +25,13 @@
     "eslint-plugin-standard": "^3.0.1"
   },
   "dependencies": {
-    "cookiejar": "^2.1.1",
+    "cheerio": "^1.0.0-rc.2",
     "html-minifier": "^3.5.8",
     "iconv-lite": "^0.4.19",
     "jsdom": "^11.6.1",
     "md5": "^2.2.1",
-    "raven": "^2.4.0"
+    "raven": "^2.4.0",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5"
   }
 }

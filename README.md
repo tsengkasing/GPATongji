@@ -1,6 +1,11 @@
 # GPATongji
 A Node.js service to request and parse GPA of undergraduate from xuanke.tongji.edu.cn.
 
+![](https://img.shields.io/badge/cheerio-need-brightgreen.svg)
+![](https://img.shields.io/badge/iconv--lite-need-brightgreen.svg)
+![](https://img.shields.io/badge/request-need-brightgreen.svg)
+![](https://img.shields.io/badge/request--promise--native-need-brightgreen.svg)
+
 ## Usage
 
 ```shell
