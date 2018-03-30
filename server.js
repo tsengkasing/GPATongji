@@ -27,6 +27,7 @@ http.createServer(function (request, response) {
 				} catch (e) {
 					response.statusCode = 415;
 					response.end('Unsupport Media Format', 'utf8');
+					return;
 				}
 				const {token1, token2} = info;
 				console.log(`[${new Date().toLocaleString()}][${remoteIp}]        \t\t ${token1}`);

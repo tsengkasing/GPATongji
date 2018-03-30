@@ -66,6 +66,12 @@ curl -X POST -H "Content-Type:application/json;charset=utf8" --data '{"token1":"
 
 ## Update
 
+### 2018-03-19
+
+登录的跳转端口从 9321 改为 443，开放到外网使用。
+
+> (讲个笑话，走 HTTP 协议的 443)
+
 ### 2018-03-04
 
-学校切换到统一身份验证系统，抓取绩点的方式改为``GPA-OIOSAML.js``
+学校切换到统一身份验证系统，抓取绩点的方式改为``GPA-unified.js``，但是只能在校园内网使用
