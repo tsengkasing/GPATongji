@@ -66,6 +66,10 @@ curl -X POST -H "Content-Type:application/json;charset=utf8" --data '{"token1":"
 
 ## Update
 
+### 2018-04-27
+
+旧的登录接口关闭。
+
 ### 2018-03-19
 
 登录的跳转端口从 9321 改为 443，开放到外网使用。
