@@ -10,7 +10,7 @@ const { performance } = require('perf_hooks');
 	const testGPAMethod = require('../lib/GPA-unified');
 
 	const testCases = [
-		{func: testTime, name: '比较旧式登录和统一身份验证的时间'},
+		// {func: testTime, name: '比较旧式登录和统一身份验证的时间'},
 		{func: testSuccess, name: '查询绩点成功'},
 		{func: testFailed, name: '密码输入错误'},
 	];
