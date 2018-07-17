@@ -66,6 +66,10 @@ curl -X POST -H "Content-Type:application/json;charset=utf8" --data '{"token1":"
 
 ## Update
 
+### 2018-07-19
+
+因每次高峰期都会导致 ip 被封，在刘畅同学的帮助下完成了同心云成绩查询的接口。（暂未公开）
+
 ### 2018-04-27
 
 旧的登录接口关闭。
