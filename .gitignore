@@ -8,6 +8,12 @@ yarn-error.log*
 # vscode
 .vscode
 
+# secret code
+lib/GPA-cloud.js
+
+# Temp file
+__*
+
 # Runtime data
 pids
 *.pid
