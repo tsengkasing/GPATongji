@@ -18,7 +18,7 @@ async function main() {
         console.log(`Testing ${i} / ${len} => ${proxyURL}`);
         try {
                 await request.get('https://www.baidu.com', {
-                        proxy: `http://${proxyURL}`,
+                        proxy: proxyURL,
                         timeout: 2000
                 });
                 console.log(`[OK] ${proxyURL}\r\n`);
