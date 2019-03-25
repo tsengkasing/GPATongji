@@ -4,7 +4,8 @@
   "description": "A Node.js service to request and parse GPA of undergraduate from xuanke.tongji.edu.cn.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev:stylus": "stylus -w src/index.styl -o public/index.css"
   },
   "repository": {
     "type": "git",

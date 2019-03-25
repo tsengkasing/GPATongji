@@ -1,0 +1,60 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+span {
+  font-family: 'PingFang SC', 'Helvetica', 'Arial', sans-serif;
+}
+body,
+.app {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 8rem;
+  height: 8rem;
+  margin: 20px;
+  border-radius: 50%;
+}
+.header__layout {
+  margin-top: 4rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.header__layout .title {
+  margin-top: 0;
+}
+.center {
+  margin: 0;
+  padding: 32px 0;
+  text-align: center;
+}
+.GPA-table-border {
+  margin: 32px 0;
+  overflow-x: auto;
+}
+.GPA-table {
+  text-align: center;
+  margin: 0 auto;
+}
+.GPA-avg {
+  color: #f00;
+}
+footer {
+  margin: 2rem auto;
+}

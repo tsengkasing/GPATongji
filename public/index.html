@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>同济大学绩点查询</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-light_blue.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+<body>
+    <header class="header__layout">
+        <img class="logo" src="assets/tj.jpg" alt="同济的Logo" />
+        <h6 class="title">同济大学绩点查询</h6>
+    </header>
+    <div class="app">
+        <div class="center" id="spinner" style="display: none;">
+            <div class="mdl-spinner mdl-js-spinner is-active"></div>
+        </div>
+        <main class="mdl-layout__content center" id="GPA_tables">
+            <div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="number" id="token1">
+                    <label class="mdl-textfield__label" for="token1">用户名</label>
+                </div><br/>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="password" id="token2">
+                    <label class="mdl-textfield__label" for="token2">密码</label>
+                </div>
+            </div>
+            <button onclick="__main__()"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                登录
+            </button>
+        </main>
+    </div>
+    <footer>Copyright © 2017 - 2019 everstar.xyz</footer>
+</body>
+<script src="index.js" ></script>
+
+</html>

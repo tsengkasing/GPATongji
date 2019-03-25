@@ -3,6 +3,8 @@
  * Create http server to listen request.
  */
 
+const fs = require('fs');
+const path = require('path');
 const http = require('http');
 const GPA = require('./lib/GPA-unified');
 const GPACloud = require('./lib/GPA-cloud');
@@ -16,6 +18,19 @@ http.createServer(function (request, response) {
 	const remoteIp = headers['x-real-ip'] || '';
 
 	switch (url) {
+	case '/':
+	case '/index':
+	case '/index.html':
+		fs.createReadStream(path.join(__dirname, 'public', 'index.html')).pipe(response);
+		break;
+	case '/favicon.ico':
+	case '/index.js':
+	case '/index.css':
+	case '/mdl/material.min.js':
+	case '/mdl/material.min.css':
+	case '/assets/tj.jpg':
+		fs.createReadStream(path.join(__dirname, 'public', ...url.split('/').slice(1))).pipe(response);
+		break;
 	case '/api/gpa':
 		switch (method) {
 		case 'POST':
@@ -38,7 +53,7 @@ http.createServer(function (request, response) {
 					// 测试用
 					if (token1 === '147') {
 						response.setHeader('Content-Type', 'application/json;charset=UTF-8');
-						response.end('{"matriculation_number":"147","name":"测试","college":"软件学院","major":"软件工程","gpa":"5","selective_credit":"144.5","actual_credit":"144.5","fail_courses_count":"0","table":[{"semester":"2014-2015学年第1学期","course_list":[["002016","形势与政策(1)","优","0.5","5","Y","正常","必修","2015-01-22"]],"GPA":"5"}]}');
+						response.end('{"matriculation_number":"147","name":"测试","college":"软件学院","major":"软件工程","gpa":"4.5","selective_credit":"144.5","actual_credit":"144.5","fail_courses_count":"0","table":[{"semester":"2014-2015学年第1学期","course_list":[["002016","形势与政策(1)","优","0.5","5","Y","正常","必修","2015-01-22"]],"GPA":"5"}, {"semester":"2014-2015学年第1学期","course_list":[["002016","形势与政策(2)","梁","0.5","4","Y","正常","必修","2015-07-22"]],"GPA":"4"}]}');
 					} else {
 						GPA(token1, token2).then(({status, data, error}) => {
 							if (status) {
